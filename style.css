@@ -1,0 +1,217 @@
+/* Estilos Generales */
+body {
+    font-family: 'Verdana', sans-serif;
+    background: linear-gradient(135deg, #fce4ec, #e1bee7); /* Gradiente suave rosa a lila */
+    color: #4a148c; /* Morado oscuro para texto principal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Contenedor Principal de la Trivia */
+.trivia-container {
+    background-color: rgba(255, 255, 255, 0.95); /* Blanco semi-transparente */
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(136, 78, 158, 0.3); /* Sombra lila */
+    text-align: center;
+    max-width: 650px;
+    width: 100%;
+    border: 2px solid #ce93d8; /* Borde lila suave */
+}
+
+/* --- Pantalla de Inicio --- */
+#pantalla-inicio h1 {
+    color: #ab47bc; /* Morado medio */
+    margin-bottom: 15px;
+    font-size: 2.2em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+}
+#pantalla-inicio p {
+    font-size: 1.2em;
+    color: #6a1b9a; /* Morado más intenso */
+    margin-bottom: 30px;
+}
+.configuracion-inicio {
+    margin-bottom: 30px;
+}
+.configuracion-inicio label {
+    display: block; /* Poner la etiqueta encima */
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #8e24aa; /* Morado oscuro */
+    font-size: 1.1em;
+}
+select#tema { /* Estilo para el dropdown */
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 20px; /* Bordes redondeados */
+    border: 2px solid #ce93d8; /* Borde lila */
+    background-color: #f3e5f5; /* Fondo lila muy claro */
+    font-size: 1em;
+    color: #4a148c; /* Texto morado */
+    -webkit-appearance: none; /* Quitar estilo nativo en algunos navegadores */
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%238e24aa' class='bi bi-caret-down-fill' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E"); /* Flecha personalizada */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    cursor: pointer;
+}
+#btn-empezar { /* Estilo específico para el botón de empezar */
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-image: linear-gradient(to right, #ab47bc, #8e24aa);
+    color: white;
+}
+#btn-empezar:hover {
+    background-image: linear-gradient(to right, #9c27b0, #7b1fa2);
+}
+
+
+/* --- Área del Juego --- */
+#contenedor-juego {
+    margin-top: 25px;
+}
+
+/* Estado del Juego (Progreso y Puntaje) */
+#estado-juego {
+    display: flex;
+    justify-content: space-between; /* Pone progreso a la izq, puntaje a la der */
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: rgba(225, 190, 231, 0.5); /* Fondo lila muy transparente */
+    border-radius: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #6a1b9a; /* Morado */
+}
+#progreso {
+    text-align: left;
+}
+#puntaje {
+    text-align: right;
+    /* Quitar estilos individuales si estaban antes */
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 0;
+    display: block; /* Asegurar que ocupe su espacio */
+}
+
+
+/* Texto de la Pregunta */
+#pregunta {
+    color: #6a1b9a; /* Morado más intenso */
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    min-height: 60px; /* Espacio reservado para evitar saltos */
+    line-height: 1.4;
+}
+
+/* Contenedor de Opciones */
+#opciones {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px; /* Espacio más generoso */
+    margin-bottom: 25px;
+}
+
+/* Estilo Base de Botones (Opciones, Siguiente, Reiniciar) */
+button {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 25px; /* Botones muy redondeados */
+    background-image: linear-gradient(to right, #f8bbd0, #e1bee7); /* Gradiente rosa a lila */
+    color: #4a148c; /* Texto morado oscuro */
+    font-size: 1.05em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(136, 78, 158, 0.2);
+}
+
+/* Efecto Hover para botones */
+button:not(:disabled):hover {
+    background-image: linear-gradient(to right, #f48fb1, #ce93d8); /* Gradiente más intenso al pasar */
+    box-shadow: 0 6px 12px rgba(136, 78, 158, 0.3);
+    transform: translateY(-3px);
+}
+
+/* Botón presionado */
+button:not(:disabled):active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(136, 78, 158, 0.2);
+}
+
+/* Estilos para botones deshabilitados */
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    background-image: none; /* Quitar gradiente */
+    background-color: #e0e0e0; /* Gris claro */
+    color: #9e9e9e; /* Texto gris */
+    box-shadow: none;
+}
+
+/* Estilo para Opción Correcta */
+.boton-opcion.correcta {
+    background-image: linear-gradient(to right, #a5d6a7, #c8e6c9) !important; /* Gradiente verde pastel */
+    color: #1b5e20 !important; /* Verde oscuro */
+    border: 2px solid #66bb6a;
+}
+
+/* Estilo para Opción Incorrecta */
+.boton-opcion.incorrecta:not(.correcta) { /* Asegura que no sobreescriba la correcta si se seleccionó mal */
+    background-image: linear-gradient(to right, #ef9a9a, #ffcdd2) !important; /* Gradiente rojo pastel */
+    color: #b71c1c !important; /* Rojo oscuro */
+    opacity: 0.7;
+    border: 2px solid #e57373;
+}
+
+/* Botones Siguiente y Reiniciar */
+#btn-siguiente, #btn-reiniciar {
+    margin-top: 25px;
+    background-image: linear-gradient(to right, #ab47bc, #8e24aa); /* Gradiente morado */
+    color: white;
+    font-size: 1.1em;
+}
+
+#btn-siguiente:hover, #btn-reiniciar:hover {
+    background-image: linear-gradient(to right, #9c27b0, #7b1fa2);
+}
+
+
+/* --- Área de Resultados --- */
+#resultado {
+    margin-top: 25px; /* Asegurar espacio */
+    font-size: 1.3em;
+    color: #6a1b9a; /* Morado más intenso */
+}
+#resultado h2 {
+    color: #ab47bc; /* Morado medio */
+    font-size: 1.8em;
+    margin-bottom: 15px; /* Espacio bajo el título del resultado */
+}
+#resultado p {
+    margin-top: 15px;
+    margin-bottom: 25px; /* Espacio antes del botón reiniciar */
+    font-weight: bold;
+    line-height: 1.5; /* Mejorar legibilidad */
+}
+
+
+/* --- Responsividad --- */
+@media (min-width: 600px) {
+    /* 2 columnas para opciones en pantallas más grandes */
+    #opciones {
+        grid-template-columns: 1fr 1fr;
+    }
+}

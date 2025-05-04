@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Ambiental - Elige un Tema</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="trivia-container">
+
+        <!-- Pantalla de Inicio (Visible al principio) -->
+        <div id="pantalla-inicio">
+            <h1>Trivia Ambiental</h1>
+            <p>¡Selecciona un tema para empezar!</p>
+
+            <div class="configuracion-inicio">
+                <label for="tema">Elige el tema:</label>
+                <select id="tema">
+                    <option value="todos">Todos los Temas</option>
+                    <option value="recursosNaturales">Recursos Naturales</option>
+                    <option value="laBasura">La Basura</option>
+                    <option value="conservacionRecursos">Conservación de los Recursos Naturales</option>
+                </select>
+            </div>
+
+            <button id="btn-empezar">¡Empezar Juego!</button>
+        </div>
+
+        <!-- Área del Juego (Oculta al principio) -->
+        <div id="contenedor-juego" style="display: none;">
+            <div id="estado-juego">
+                <span id="progreso">Pregunta ? de ?</span>
+                <span id="puntaje">Puntaje: 0</span>
+            </div>
+            <h2 id="pregunta">Cargando pregunta...</h2>
+            <div id="opciones">
+                <!-- Los botones de opciones se cargarán aquí por JS -->
+            </div>
+            <button id="btn-siguiente" style="display: none;">Siguiente Pregunta</button>
+        </div>
+
+        <!-- Área de Resultados (Oculta al principio) -->
+        <div id="resultado" style="display: none;">
+            <!-- El resultado final se mostrará aquí por JS -->
+        </div>
+
+        <!-- Botón Reiniciar (Oculto al principio) -->
+        <button id="btn-reiniciar" style="display: none;">Elegir Otro Tema</button>
+
+    </div>
+
+    <!-- Script JS -->
+    <script src="script.js"></script>
+    <!-- Recordatorio: Necesitas la carpeta 'sounds' en la misma ubicación
+         con los archivos (en minúsculas):
+         correct.wav, incorrect.wav, fanfare.mp3, background_music.mp3 -->
+</body>
+</html>
